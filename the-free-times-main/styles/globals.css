@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3dfc1;
+  color: #1a1c1a;
+  font-family: "Neuton", serif;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  transition: all 150ms;
+  display: inline-block;
+}
