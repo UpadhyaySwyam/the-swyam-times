@@ -57,7 +57,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       >
         <VStack alignItems={"flex-start"}>
           <Heading display={"flex"} textTransform={"uppercase"}>
-            Free Times <Text fontSize={"sm"}>{category}</Text>
+            Swyam Times <Text fontSize={"sm"}>{category}</Text>
           </Heading>
           <i>Free to read e-paper with concise articles and many categories</i>
         </VStack>
