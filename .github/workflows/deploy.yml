@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.1.4
+          run_install: true
+      
+      - name: Build
+        env:
+          NEXT_PUBLIC_BASE: /the-swyam-times
+          NEXT_PUBLIC_ASSET: /the-swyam-times
+        run: |
+          pnpm run build
+          pnpm run export
+          touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages 
+          folder: out
